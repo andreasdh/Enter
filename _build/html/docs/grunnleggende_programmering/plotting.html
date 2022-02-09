@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datahåndtering I: Visualisering &#8212; Programmeringskurs med Enter</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Datahåndering II: Håndtere og visualisere data" href="lese_filer.html" />
+    <link rel="prev" title="Quiz 6: Datasamlinger (arrayer og dictionarier)" href="quiz6.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/enter-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programmeringskurs med Enter</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grunnleggende programmering
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tall_variabler.html">
+   Variabler og datatyper
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz1.html">
+     Quiz 1: Variabler og aritmetikk
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="lister.html">
+   Lister
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz2.html">
+     Quiz 2: Lister
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="if-tester.html">
+   Vilkår (if-tester)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz3.html">
+     Quiz 3: Vilkår (if-tester)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="lokker.html">
+   Løkker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz4.html">
+     Quiz 4: Løkker
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="funksjoner.html">
+   Funksjoner
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz5.html">
+     Quiz 5: Funksjoner
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="datasamlinger.html">
+   Datasamlinger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz6.html">
+     Quiz 6: Datasamlinger (arrayer og dictionarier)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Datahåndtering I: Visualisering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lese_filer.html">
+   Datahåndering II: Håndtere og visualisere data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmeringskurs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../kurs/programmering_intro.html">
+   Programmering med ENT3R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../kurs/smittemodellering.html">
+   Smittemodellering
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/grunnleggende_programmering/plotting.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/andreasdh/Enter/master?urlpath=tree/mini_book/docs/grunnleggende_programmering/plotting.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-av-lister">
+   Plotting av lister
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-av-funksjoner">
+   Plotting av funksjoner
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flere-plott-i-samme-figur">
+   Flere plott i samme figur
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Datahåndtering I: Visualisering</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-av-lister">
+   Plotting av lister
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-av-funksjoner">
+   Plotting av funksjoner
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flere-plott-i-samme-figur">
+   Flere plott i samme figur
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="datahandtering-i-visualisering">
+<h1>Datahåndtering I: Visualisering<a class="headerlink" href="#datahandtering-i-visualisering" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-laeringsutbytte admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>Etter å ha arbeidet med dette temaet, skal du kunne:</p>
+<ol class="simple">
+<li><p>bruke matplotlib-biblioteket til visualisering</p></li>
+<li><p>plotte datapunkter og funksjoner</p></li>
+<li><p>lage og tolke ulike visualiseringer</p></li>
+</ol>
+</div>
+<p>Håndtering av data blir stadig viktigere i dagens samfunn. En viktig del av datahåndtering er å kunne generere fine og informative figurer som beskriver dataene på en god måte. Det blir stadig vanligere å bruke programmering til dette. Det finnes flere typer biblioteker som kan gi oss fine og profesjonelle figurer. Vi begynner med et mye brukt bibliotek som heter <em>matplotlib</em>. Hvis du foretrekker å importere <em>pylab</em> istedenfor, kan du godt gjøre det. Pylab-biblioteket inneholder også alle de samme plotteverktøyene.</p>
+<div class="section" id="plotting-av-lister">
+<h2>Plotting av lister<a class="headerlink" href="#plotting-av-lister" title="Permalink to this headline">¶</a></h2>
+<p>Hvis vi har få datapunkter, kan vi skrive dem inn i lister direkte i programmet vårt og plotte dem. La oss si at vi har samlet data for hvor raskt en hurtigvoksende plante vokser annenhver dag. Vi registerer dagene og høyden til planten i cm, og legger disse verdiene inn i lister.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>       <span class="c1"># importerer relevante plotteverktøy</span>
+
+<span class="n">tid</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>     <span class="c1"># tid i dager</span>
+<span class="n">plantehøyde</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">7.9</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mf">13.7</span><span class="p">,</span> <span class="mf">13.9</span><span class="p">]</span> <span class="c1"># høyde i cm</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span> <span class="n">plantehøyde</span><span class="p">)</span>            <span class="c1"># plotter plantehøyde mot tid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                            <span class="c1"># viser plottet</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/plotting_1_0.png" src="../../_images/plotting_1_0.png" />
+</div>
+</div>
+<p>Hvis vi har lyst til å modifisere og pynte på plottet, har vi mange muligheter til det. Her er noen forslag til en del nyttige endringer av plottet ovenfor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span> <span class="n">plantehøyde</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;limegreen&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Forsøk: Plantevekst&quot;</span><span class="p">)</span>      <span class="c1"># tittel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tid (dager)&quot;</span><span class="p">)</span>             <span class="c1"># x-aksetittel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Plantens høyde (cm)&quot;</span><span class="p">)</span>     <span class="c1"># y-aksetittel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>   <span class="c1"># definisjonsmengde</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>   <span class="c1"># verdimengde</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>       <span class="c1"># tegner rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/plotting_3_0.png" src="../../_images/plotting_3_0.png" />
+</div>
+</div>
+<p>Det finnes utrolig mange måter å modifisere et plott på. Tabellene nedenfor viser en oversikt over nyttige plottekommandoer, linjestiler, markører og farger, som du kan bruke for å lage akkurat den figuren du ønsker. Du bør også søke litt rundt på nettet for å finne andre muligheter, for eksempel ved å søke på «python plotting colors» og liknende. Du må bruke internett flittig når du lurer på noe i programmering!</p>
+<p>En veldig nyttig kommando når vi skal representere flere grafer i samme koordinatsystem, er <em>legend</em>. Denne kommandoen viser merkelappene (“labels”) til de ulike plottene. Programmet nedenfor gir et eksempel på dette.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Programmet nedenfor plotter miljøgifter i ulike organismer i to innsjøer. Studer programmet og eksperimenter med ulike verdier fra tabellen nedenfor.</p>
+</div>
+<iframe src="https://trinket.io/embed/python3/ffda9bdd1b" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe><div class="tabbed-set docutils">
+<input checked="checked" id="4a8b2b01-b8c0-4029-a2d7-228f2f7dc8f1" name="1bf84a83-cf48-4193-bb09-0fb775bfcd89" type="radio">
+</input><label class="tabbed-label" for="4a8b2b01-b8c0-4029-a2d7-228f2f7dc8f1">
+Nyttige plottekommandoer</label><div class="tabbed-content docutils">
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>         <span class="c1"># plotter x mot y og trekker rette linjer mellom</span>
+<span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>      <span class="c1"># plotter kun punkter</span>
+<span class="n">show</span><span class="p">()</span>            <span class="c1"># viser plottet</span>
+
+<span class="n">title</span><span class="p">(</span><span class="s2">&quot;tittel&quot;</span><span class="p">)</span>   <span class="c1"># tittel på plottet</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;tekst&quot;</span><span class="p">)</span>   <span class="c1"># x-aksetittel</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;tekst&quot;</span><span class="p">)</span>   <span class="c1"># y-aksetittel</span>
+<span class="n">xlim</span><span class="p">(</span><span class="n">fra</span><span class="p">,</span> <span class="n">til</span><span class="p">)</span>    <span class="c1"># definisjonsmengde</span>
+<span class="n">ylim</span><span class="p">(</span><span class="n">fra</span><span class="p">,</span> <span class="n">til</span><span class="p">)</span>    <span class="c1"># verdimengde</span>
+<span class="n">grid</span><span class="p">()</span>            <span class="c1"># rutenett på</span>
+
+<span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># x-akse</span>
+<span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># y-akse</span>
+
+<span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;filnavn.png&quot;</span><span class="p">)</span> <span class="c1"># lagrer bildet med god oppløsning</span>
+</pre></div>
+</div>
+<p>Inni plottekommandoen kan vi også legge til farger, linjestiler, markører, merkelapper og liknende:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="f83dc9ec-eddc-4b7d-b770-baca4dcf045f" name="1bf84a83-cf48-4193-bb09-0fb775bfcd89" type="radio">
+</input><label class="tabbed-label" for="f83dc9ec-eddc-4b7d-b770-baca4dcf045f">
+Markører</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Markør</p></th>
+<th class="head"><p>Forklaring</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“.”</p></td>
+<td><p>punkt</p></td>
+</tr>
+<tr class="row-odd"><td><p>“o”</p></td>
+<td><p>sirkel</p></td>
+</tr>
+<tr class="row-even"><td><p>” ” (mellomrom)</p></td>
+<td><p>ingen markør</p></td>
+</tr>
+<tr class="row-odd"><td><p>“^”</p></td>
+<td><p>triangel opp</p></td>
+</tr>
+<tr class="row-even"><td><p>“v”</p></td>
+<td><p>triangel ned</p></td>
+</tr>
+<tr class="row-odd"><td><p>“s”</p></td>
+<td><p>firkant</p></td>
+</tr>
+<tr class="row-even"><td><p>“p”</p></td>
+<td><p>femkant</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="085f268b-9258-4743-8dc6-75965c3fc5a2" name="1bf84a83-cf48-4193-bb09-0fb775bfcd89" type="radio">
+</input><label class="tabbed-label" for="085f268b-9258-4743-8dc6-75965c3fc5a2">
+Linjestiler</label><div class="tabbed-content docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Linjestil</p></th>
+<th class="head"><p>Forklaring</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“-“</p></td>
+<td><p>heltrukket linje</p></td>
+</tr>
+<tr class="row-odd"><td><p>“–”</p></td>
+<td><p>stipla linje (lange)</p></td>
+</tr>
+<tr class="row-even"><td><p>“;”</p></td>
+<td><p>stipla linje (korte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>“-.”</p></td>
+<td><p>stilpa linje (annenhver kort/lang)</p></td>
+</tr>
+<tr class="row-even"><td><p>” ” (mellomrom)</p></td>
+<td><p>ingen linje</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="caa414c3-cc61-400b-87b2-9f2fd8fcb5e4" name="1bf84a83-cf48-4193-bb09-0fb775bfcd89" type="radio">
+</input><label class="tabbed-label" for="caa414c3-cc61-400b-87b2-9f2fd8fcb5e4">
+Farger</label><div class="tabbed-content docutils">
+<p><img alt="farger" src="https://matplotlib.org/2.0.2/_images/named_colors.png" /></p>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-av-funksjoner">
+<h2>Plotting av funksjoner<a class="headerlink" href="#plotting-av-funksjoner" title="Permalink to this headline">¶</a></h2>
+<p>En datamaskin kan bare håndtere <em>diskrete</em> verdier, altså ikke-uendelige tallmengder. En matematisk funksjon kan derimot være kontinuerlig og ha uendelig mange funksjonsverdier. På en datamaskin må vi tilnærme denne uendelige mengden med et ganske stort antall. Dette kan vi gjøre med for eksempel <em>linspace</em>-kommandoen. Programmet nedenfor plotter funksjonen <span class="math notranslate nohighlight">\(f(x) = 2x^2 - 2x + 1\)</span> for <span class="math notranslate nohighlight">\(x\in[-2, 3]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># lager 1000 x-verdier mellom -2 og 3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># lager 1000 tilsvarende y-verdier til en funksjon</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/plotting_7_0.png" src="../../_images/plotting_7_0.png" />
+</div>
+</div>
+<p>Det Python egentlig gjør når den plotter funksjoner, er å plotte et bestemt antall punkter og “tegne” rette linjer mellom disse punktene. Dette kalles “lineær interpolasjon”. Det blir tydelig dersom vi kun velger ut fem punkter å plotte funksjonen i.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># lager 5 x-verdier mellom -2 og 3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>      <span class="c1"># lager 5 tilsvarende y-verdier til en funksjon</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/plotting_9_0.png" src="../../_images/plotting_9_0.png" />
+</div>
+</div>
+<p>Dersom vi definerer en Python-funksjon, kan vi også bruke denne til å generere <em>y</em>-verdier:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> 
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># lager 5 x-verdier mellom -2 og 3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                     <span class="c1"># lager 1000 tilsvarende y-verdier til en funksjon</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/plotting_11_0.png" src="../../_images/plotting_11_0.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Plott tre funksjoner i samme koordinatsystem. Eksperimenter med farger, linjestiler og annet. Husk aksetitler!</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<iframe src="https://trinket.io/embed/python3/87f8b456bd" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="section" id="flere-plott-i-samme-figur">
+<h2>Flere plott i samme figur<a class="headerlink" href="#flere-plott-i-samme-figur" title="Permalink to this headline">¶</a></h2>
+<p>Dersom vi ønsker å lage flere plott i samme figur, kan vi bruke kommandoen <em>subplot(antall rader, antall kolonner, figurnummer)</em> for å plotte flere grafer samtidig. Her er et eksempel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+ 
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># To rader, én kolonne, figur 1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Grønn stiplekurve&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>            <span class="c1"># To rader, én kolonne, figur 2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Rød prikkekurve&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>              <span class="c1"># Fikser slik at det ikke blir overlapp mellom f.eks. aksetitler</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#plt.savefig(&quot;kulfigur.png&quot;)    # Lagrer figuren på datamaskinen din</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/plotting_14_0.png" src="../../_images/plotting_14_0.png" />
+</div>
+</div>
+<p>Vi kan også lage flere funksjoner i samme koordinatsystem. Da bruker vi <em>labels</em> (merkelapper) for å skille mellom de ulike grafene, og <em>legend</em> for å vise merkelappene i koordinatsystemet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
+
+<span class="n">y1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lawngreen&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">)</span> <span class="c1"># Bruker merkelapp (label) for å skille mellom kurvene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;maroon&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;g(x)&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;deepskyblue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;h(x)&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># Viser merkelappene</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># Tegner x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># Tegner y-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/plotting_16_0.png" src="../../_images/plotting_16_0.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Plott tre av dine favorittfunksjoner i samme koordinatsystem. Tilpass akser og tittel og pynt på plottet.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Modifiser figuren ovenfor slik at plottene vises ved siden av hverandre i samme figur istedenfor under hverandre.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Spesifiser subplottene som <em>subplot(1, 2, 1)</em> og <em>subplot(1, 2, 2)</em>. Da blir det to kolonner istedenfor to rader.</p>
+</div>
+</div>
+<div class="section" id="videoer">
+<h2>Videoer<a class="headerlink" href="#videoer" title="Permalink to this headline">¶</a></h2>
+<p>I videoen nedenfor kan du få en innføring eller repetisjon i hvordan du plotter i Python.</p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/71SeDOstEwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs\grunnleggende_programmering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="quiz6.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Quiz 6: Datasamlinger (arrayer og dictionarier)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="lese_filer.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Datahåndering II: Håndtere og visualisere data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Andreas Haraldsrud<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
