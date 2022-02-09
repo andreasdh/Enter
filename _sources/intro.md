@@ -1,16 +1,13 @@
-# Welcome to your Jupyter Book
+# Velkommen til programmeringskurs med Enter
 
-This is a small sample book to give you a feel for how book content is
-structured.
+Her kan du lære deg grunnleggende programmering.
 
 :::{note}
-Here is a note!
+Programmering kan være både kreativt, morsomt, frustrerende, interessant, irriterende og lærerrikt på en gang!
 :::
 
-And here is a code block:
-
 ```
-e = mc^2
+print("Velkommen!")
 ```
 
-Check out the content pages bundled with this sample book to see more.
+Sjekk ut sidemenyen for å ta en kikk på innholdet.
