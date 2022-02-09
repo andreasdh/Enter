@@ -1,0 +1,30 @@
+format: jb-book
+root: docs/intro
+
+parts:
+- caption: Grunnleggende programmering
+  chapters:
+  - file: docs/grunnleggende_programmering/tall_variabler
+    sections:
+    - file: docs/grunnleggende_programmering/quiz1
+  - file: docs/grunnleggende_programmering/lister
+    sections:
+    - file: docs/grunnleggende_programmering/quiz2
+  - file: docs/grunnleggende_programmering/if-tester
+    sections:
+    - file: docs/grunnleggende_programmering/quiz3
+  - file: docs/grunnleggende_programmering/lokker
+    sections:
+    - file: docs/grunnleggende_programmering/quiz4
+  - file: docs/grunnleggende_programmering/funksjoner
+    sections:
+      - file: docs/grunnleggende_programmering/quiz5
+  - file: docs/grunnleggende_programmering/datasamlinger
+    sections:
+      - file: docs/grunnleggende_programmering/quiz6
+  - file: docs/grunnleggende_programmering/plotting
+  - file: docs/grunnleggende_programmering/lese_filer
+- caption: Programmeringskurs
+  chapters:
+  - file: docs/kurs/programmering_intro
+  - file: docs/kurs/smittemodellering
