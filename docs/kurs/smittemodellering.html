@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smittemodellering &#8212; Programmeringskurs med Enter</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Programmering med ENT3R" href="programmering_intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/enter-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programmeringskurs med Enter</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Grunnleggende programmering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grunnleggende_programmering/tall_variabler.html">
+   Variabler og datatyper
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grunnleggende_programmering/quiz1.html">
+     Quiz 1: Variabler og aritmetikk
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grunnleggende_programmering/lister.html">
+   Lister
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grunnleggende_programmering/quiz2.html">
+     Quiz 2: Lister
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grunnleggende_programmering/if-tester.html">
+   Vilkår (if-tester)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grunnleggende_programmering/quiz3.html">
+     Quiz 3: Vilkår (if-tester)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grunnleggende_programmering/lokker.html">
+   Løkker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grunnleggende_programmering/quiz4.html">
+     Quiz 4: Løkker
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grunnleggende_programmering/funksjoner.html">
+   Funksjoner
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grunnleggende_programmering/quiz5.html">
+     Quiz 5: Funksjoner
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../grunnleggende_programmering/datasamlinger.html">
+   Datasamlinger
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../grunnleggende_programmering/quiz6.html">
+     Quiz 6: Datasamlinger (arrayer og dictionarier)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../grunnleggende_programmering/plotting.html">
+   Datahåndtering I: Visualisering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../grunnleggende_programmering/lese_filer.html">
+   Datahåndering II: Håndtere og visualisere data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Programmeringskurs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="programmering_intro.html">
+   Programmering med ENT3R
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Smittemodellering
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/kurs/smittemodellering.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/andreasdh/Enter/master?urlpath=tree/mini_book/docs/kurs/smittemodellering.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modell-1">
+   Modell 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modell-2">
+   Modell 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modell-3">
+   Modell 3
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Smittemodellering</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modell-1">
+   Modell 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modell-2">
+   Modell 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modell-3">
+   Modell 3
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="smittemodellering">
+<h1>Smittemodellering<a class="headerlink" href="#smittemodellering" title="Permalink to this headline">¶</a></h1>
+<p>Hva tenker du når du hører ordet modell? En miniatyrdel av en liten by, kanskje? Eller kanskje du tenker på atommodeller? En modell er en forenklet representasjon av virkeligheten. Vi kan aldri representerere virkeligheten slik den er, så alle modeller vil ha visse forutsetninger og begrensninger. Her skal vi se på <em>matematiske modeller</em>, altså bruk av matematikk for å beskrive et eller annet fenom. Nærmere bestemt skal vi se på et veldig aktuelt tema i våre dager, nemlig modellering av smittespredning.</p>
+<p>En modelleringsprosess innebærer flere trinn. For det første må vi ha en observasjon eller et fenomen vi ønsker å studere. Ut fra visse egenskaper ved dette systemet lager vi en modell som skal beskrive systemet under visse betingelser. Denne modellen kan vi teste, for eksempel gjennom eksperimenter eller simuleringer. Da får vi data som vi kan bruke til å evaluere modellens gyldighet. Deretter kan vi eventuelt justere modellen og gjøre nye simuleringer og målinger.</p>
+<p>Modellering er altså en kontinuerlig prosess der modeller hele tiden evalueres og justeres opp mot virkeligheten. Programmering kan gjøre denne prosessen enklere fordi vi med noen tastetrykk kan endre modellen og observere utfallet av dette. For FHI har smittemodellering vært en svært viktig del av håndteringen av koronaviruspandemien, så la oss prøve oss som “smittemodellerere”!</p>
+<div class="section" id="modell-1">
+<h2>Modell 1<a class="headerlink" href="#modell-1" title="Permalink to this headline">¶</a></h2>
+<p>Vi begynner med en enkel modell for smittespredning der antall smittede øker med en prosentvis andel hver dag. Vi kan da beskrive utviklingingen i antall smittede indivier <em>I</em> (“Inceptibles”) slik:</p>
+<div class="math notranslate nohighlight">
+\[I_{t+1} = I_t + aI_t\]</div>
+<p>Her betyr indeksen <em>t + 1</em> betyr at det er antall smittede ved neste tidspunkt (her neste dag), mens indeksen <em>t</em> betyr antall smittede på nåværende tidspunkt. Det er jo ganske logisk at antall smittede neste dag er avhengig av antall smittede i dag. I tillegg øker antall smittede med en vekstfaktor <em>a</em>. Vi kaller <em>a</em> for en <em>parameter</em>. Disse parameterne er ofte bestemt av observasjoner og data, så vi kan ikke vite hva som er en god verdi for <em>a</em> til å begynne med.</p>
+<ul class="simple">
+<li><p>Forklar med egne ord hva modellen forteller. Drøft også i hvilke sammenhenger det kan være hensiktsmessig å bruke en slik modell. Er det en realistisk modell i noen sammenhenger?</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Modellen forteller at antall smittede individer ved neste tidssteg er lik antall smittede individer ved forrige tidssteg + en viss andel (a) av antall individer som sprer smitten videre.</p>
+<p>Modellen forutsetter at det ikke er noen immunitet innenfor smittemengden, altså at ingen smittede møter på personer som allerede er smittet. Det kan være et realistisk bilde i en stor populasjon i begynnelsen av et smitteforløp. Det er derfor usannsynlig at modellen beskriver utviklingen langt fram i tid. Modellen forutsetter også at ingen blir friske i løpet av den tiden vi ser på. Igjen peker dette på at modellen kun representerer et kort tidsrom.</p>
+</div>
+<ul class="simple">
+<li><p>Fyll inn det som mangler i programmet nedenfor for å simulere sykdomsutviklingen. Dersom du vil, kan du selvfølgelig viske ut alt og bygge programmet fra grunnen av. Varier med ulike verdier av <em>a</em> og forklar betydningen av parameteren <em>a</em> ut fra det du ser.</p></li>
+</ul>
+<iframe src="https://trinket.io/embed/python3/89e944ef8e" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">157759</span>     <span class="c1"># Populasjonsstørrelse</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.2</span>        <span class="c1"># Kontaktrate per uke</span>
+<span class="n">tid_slutt</span> <span class="o">=</span> <span class="mi">48</span> <span class="c1"># Antall uker vi ønsker å simulere</span>
+
+<span class="c1"># Startverdier</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mi">3</span>          <span class="c1"># Antall smittede til å begynne med</span>
+
+<span class="c1"># Lister for å spare på verdiene</span>
+<span class="n">smittede</span> <span class="o">=</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">tid</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tid_slutt</span><span class="p">):</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">I</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">I</span>
+    <span class="c1"># Legger inn verdier i listene</span>
+    <span class="n">smittede</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tid</span><span class="p">)</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">smittede</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Smittede&quot;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Antall uker fra siste uke i september 2004&quot;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Antall individer&quot;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>        <span class="c1"># Viser merkelapper</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="modell-2">
+<h2>Modell 2<a class="headerlink" href="#modell-2" title="Permalink to this headline">¶</a></h2>
+<p>La oss utvide modellen og innføre en ny kategori av individer som er mottakelige for smitte. Vi kaller dem <em>S</em> (susceptibles).</p>
+<p>Vi kan anta at de smittede da utvikler seg slik:</p>
+<div class="math notranslate nohighlight">
+\[I_{n+1}=I_n+aI_nS_n\]</div>
+<p>De mottakelige kan da beskrives slik:</p>
+<div class="math notranslate nohighlight">
+\[S_{n+1}=S_n-aI_nS_n\]</div>
+<ul class="simple">
+<li><p>Bekriv modellene og prøv å forklare alle leddene og faktorene.</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Modellen sier at antall mottakelige er lik antall mottakelige ved forrige tidssteg minus andelen som er smittet. Årsaken til at vi også ganger inn de mottakelige her, er at smittespredningen nå avhenger av både mottakelige og de som allerede er smittet.</p>
+</div>
+<ul class="simple">
+<li><p>Fyll inn det som mangler i programmet nedenfor for å simulere sykdomsutviklingen. Dersom du vil, kan du selvfølgelig viske ut alt og bygge programmet fra grunnen av. Prøv å variere antall smittede til å begynne med. Beskriv utviklingen til hverandre og diskuter hva som skjer. Du kan også prøve med andre modeller, hvis du vil. Legg merke til at vi lagrer endringen i I og S i en egen variabel for å bruke I og S ved samme tidspunkt.</p></li>
+</ul>
+<iframe src="https://trinket.io/embed/python3/5e28200d13" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">157759</span>      <span class="c1"># Populasjonsstørrelse</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">/</span><span class="n">N</span>       <span class="c1"># Kontaktrate</span>
+<span class="n">tid_slutt</span> <span class="o">=</span> <span class="mi">48</span>  <span class="c1"># Antall uker vi ønsker å simulere</span>
+
+<span class="c1"># Startverdier</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mi">3</span>           <span class="c1"># Antall smittede til å begynne med</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">I</span>       <span class="c1"># Antall usmittede til å begynne med</span>
+
+<span class="c1"># Lister for å spare på verdiene</span>
+<span class="n">mulige</span> <span class="o">=</span> <span class="p">[</span><span class="n">S</span><span class="p">]</span>
+<span class="n">smittede</span> <span class="o">=</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tid_slutt</span><span class="p">):</span>
+    <span class="n">endring</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">S</span><span class="o">*</span><span class="n">I</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">I</span> <span class="o">+</span> <span class="n">endring</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">S</span> <span class="o">-</span> <span class="n">endring</span>
+    <span class="c1"># Legger inn verdier i listene</span>
+    <span class="n">smittede</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+    <span class="n">mulige</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">smittede</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Smittede&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">mulige</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Mulige&quot;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Antall uker fra siste uke i september 2004&quot;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Antall individer&quot;</span><span class="p">)</span>
+<span class="n">legend</span><span class="p">()</span>         <span class="c1"># Viser merkelapper</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="modell-3">
+<h2>Modell 3<a class="headerlink" href="#modell-3" title="Permalink to this headline">¶</a></h2>
+<p>La oss nå utforske en modell som også tar hensyn til at det går an å bli frisk fra sykdommen. Da innfører vi en kategori til, nemlig de friske og tidligere smittede. Disse har da immunitet og kan ikke bli smittet igjen. Vi kaller dem R (recovered/removed), og de kan beskrives slik:</p>
+<div class="math notranslate nohighlight">
+\[ R_{n+1}=R_n+bI_n\]</div>
+<p>Da må de smittede utvikle seg slik:</p>
+<div class="math notranslate nohighlight">
+\[I_{n+1}=I_n+aS_nI_n-bI_n\]</div>
+<p>Antall usmittede, men mottakelige individer, S, må fortsatt følge denne modellen:</p>
+<div class="math notranslate nohighlight">
+\[S_{n+1}=S_n-aI_nS_n\]</div>
+<p>Dette kaller vi SIR-modellen for smitteutvikling.</p>
+<ul class="simple">
+<li><p>Beskriv hva de ulike faktorene og leddene betyr. Hva tror dere den nye parameteren <em>b</em> beskriver?</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Parameteren <em>b</em> beskriver bedringsraten, altså hvor stor andel av de smittede som blir friske, beskrevet av leddet <span class="math notranslate nohighlight">\(bI_n\)</span>.</p>
+</div>
+<ul class="simple">
+<li><p>Nedenfor er det et program som simulerer smitte ved hjelp av SIR-modellen. Kjør programmet og forklar for hverandre hva det gjør, og hva resultatene er.</p></li>
+</ul>
+<iframe src="https://trinket.io/embed/python3/ecf278aa0b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<ul class="simple">
+<li><p>Nå skal vi validere modellen vår. Vi utvider programmet og sammenlikner modellen med reelle data som viser antall smittede hver uke. Les filen «influensa.txt» og plott antall smittede (<em>I</em>) i det samme koordinatsystemet som den modellerte smittespredningen. Bruk gjerne programmet fra forrige aktivitet.</p></li>
+<li><p>Sammenlikne modellen og de reelle dataene, og tilpass gjerne koeffisientene <em>a</em> og <em>b</em> slik at modellen samsvarer bedre med dataene.</p></li>
+</ul>
+<iframe src="https://trinket.io/embed/python3/5984bdc7a1" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs\kurs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="programmering_intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Programmering med ENT3R</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Andreas Haraldsrud<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
