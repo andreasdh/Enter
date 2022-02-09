@@ -2,7 +2,7 @@
 
 Her kan du lære deg grunnleggende programmering.
 
-:::{note}
+:::{note} Husk:
 Programmering kan være både kreativt, morsomt, frustrerende, interessant, irriterende og lærerrikt på en gang!
 :::
 
